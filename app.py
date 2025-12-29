@@ -17,7 +17,7 @@ h1 {text-align:center; color:#1E88E5;}
 st.markdown("<h1>🌲 Employee Salary Predictor (Random Forest)</h1>", unsafe_allow_html=True)
 
 # ---------- LOAD DATA ----------
-data = pd.read_csv(r'C:\Users\ADMIN\Downloads\23rd- Poly\23rd- Poly\1.POLYNOMIAL REGRESSION\emp_sal.csv')   # CSV must be in project folder
+data = pd.read_csv('emp_sal.csv')   # CSV must be in project folder
 X = data.iloc[:, 1:2].values
 y = data.iloc[:, 2].values
 
@@ -37,4 +37,5 @@ level = st.slider("Select Experience Level", 1.0, 10.0, 6.5, 0.1)
 if st.button("Predict Salary"):
     salary = model.predict([[level]])[0]
     st.success(f"💰 Predicted Salary: ₹ {salary:,.2f}")
+
 
